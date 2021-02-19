@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- xml 配置在 application.yml； 这个namespace 设定了Dao和 xml的对应关系-->
+<mapper namespace="com.chinaunicom.xhl.oneclickcreation.mapper.UserMapper">
+	<insert id="insertUser" parameterType="com.chinaunicom.xhl.oneclickcreation.bean.User">
+		INSERT INTO presto_auth (username,hueUserName,password)
+		values (#{userName},#{hueUserName},#{password})
+	</insert>
+	<select id="selectUserByName" resultType="com.chinaunicom.xhl.oneclickcreation.bean.User">
+		SELECT * from presto_auth where username = #{userName}
+	</select>
+</mapper>
+    
